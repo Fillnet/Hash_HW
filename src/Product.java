@@ -1,5 +1,5 @@
 public class Product {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void product(String[] args) {
+        // TODO document why this method is empty
     }
 }
