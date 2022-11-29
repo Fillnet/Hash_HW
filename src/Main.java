@@ -4,6 +4,8 @@ import Product.ProductList;
 import Recepie.RecepieList;
 
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
 import java.util.Set;
 
 public class Main {
@@ -36,6 +38,25 @@ public class Main {
         Recipie breakfast = new Recipie("Завтрак", products);
         System.out.println(breakfast);
         System.out.println("Стоимость продуктов в рецепте: " + breakfast.getRecipiePrice() + " рублей");
+        System.out.println();
+        System.out.println("Задание 2: множество целых чисел");
+        setOfIntegers();
     }
 
+    private static void setOfIntegers() {
+        Set<Integer> integers = new HashSet<>(20);
+        Random random = new Random();
+        while (integers.size() < 20) {
+            integers.add(random.nextInt(0, 1000));
+        }
+        System.out.println(integers);
+        Iterator<Integer> integerIterator = integers.iterator();
+        while (integerIterator.hasNext()) {
+            int integer = integerIterator.next();
+            if (integer % 2 != 0) {
+                integerIterator.remove();
+            }
+        }
+        System.out.println(integers);
+    }
 }
