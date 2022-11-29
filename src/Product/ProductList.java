@@ -1,3 +1,7 @@
+package Product;
+
+import Product.Product;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -6,12 +10,12 @@ public class ProductList {
     private static final Set<Product> products = new HashSet<>();
 
 
-    public void addProduct(Product product) throws ProductAlreadyExistException {
+    public void addProduct(Product product) throws Product.ProductAlreadyExistException {
         if (product == null) {
             return;
         }
         if (this.products.contains(product)) {
-            throw new ProductAlreadyExistException();
+            throw new Product.ProductAlreadyExistException(product.getName());
 
     }else{
         this.products.add(product);

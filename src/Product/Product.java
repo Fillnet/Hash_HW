@@ -1,3 +1,5 @@
+package Product;
+import java.util.Set;
 import java.util.Objects;
 
 public class Product {
@@ -55,5 +57,14 @@ public class Product {
     public String toString() {
         String checkedString = this.isCheked() ? "Да" : "Нет";
         return String.format("%s, Цена: %s, Количество: %s, Куплен: %s", this.name, this.price, this.quantity, checkedString);
+    }
+
+    public static class ProductAlreadyExistException extends Exception {
+        public ProductAlreadyExistException(String message) {
+
+            System.out.printf("Продукт %s уже добавлен в список \n", message);
+
+
+        }
     }
 }
